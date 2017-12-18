@@ -1,0 +1,15 @@
+include includes/header.pug
+body
+	.login-container
+		.cards.login-box
+			.card-header
+				a(href="/")
+					h1 Login
+			.card-body
+				form
+					.form-group
+						input.form-control(type="text",name="uname",placeholder="Username")
+					.form-group
+						input.form-control(type="password",name="passwd",placeholder="Password")
+					.form-group
+						input.btn.btn-block.btn-lg.btn-orange(type="submit",name="login",value="Log In")
