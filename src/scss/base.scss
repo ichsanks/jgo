@@ -1,15 +1,13 @@
-body {
-	margin: 0;
-	padding: 0;
-	font-family: "Open Sans";
-	font-size: 16px;
-	line-height: 1.5;
-	color: $dark-blue;
-	width: 100%;
-}
-
 * {
 	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: "Open Sans";
+	color: $base;
+	line-height: 1.5;
+	overflow-x: hidden;
 }
 
 ul {
@@ -19,29 +17,19 @@ ul {
 }
 
 a {
-	color: $dark-blue;
-	display: inline-block;
 	text-decoration: none;
+	color: $darkblue;
+	display: inline-block;
 	&:hover,
 	&:visited {
 		text-decoration: none;
 	}
 }
 
+h1,
+h2,
+h3,
+h4, 
 p {
 	margin: 0;
-	padding-bottom: .625rem;
-}
-
-.smaller {
-	font-size: small;
-	line-height: 1;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.hr-list {
-	display: flex;	
 }

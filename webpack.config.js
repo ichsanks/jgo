@@ -1,5 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
@@ -12,10 +13,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: ['css-loader', 'sass-loader']
-				})
+				use: ['style-loader', 'css-loader', 'sass-loader']
 			},
 			{
 				test: /\.pug$/,
@@ -25,25 +23,29 @@ module.exports = {
 	},
 	devServer: {
         contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        stats: "errors-only",
+        compress: true,        
+        hot: true,
         open: true
     },
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: true,			
+			hash: true,
 			template: './src/index.pug',
 			filename: 'index.html'
 		}),
 		new HtmlWebpackPlugin({
-			inject: true,			
+			inject: true,
+			hash: true,
 			template: './src/login.pug',
 			filename: 'login.html'
 		}),
 		new ExtractTextPlugin({
 			filename: 'css/app.css',	
-			disable: false,
+			disable: true,
 			allChunks: true
-		})
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin()
 	]
 }
