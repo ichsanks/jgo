@@ -8,71 +8,50 @@
 @import "forms.scss";
 @import "buttons.scss";
 
+
 .content {
-	padding-top: 80px;
-	h1 {
-		margin: 0;
-		padding: 1rem 0;
-	}
+	margin-top: 80px;
 }
 
 section {
-	height: 440px;
-	overflow: hidden;		
+	min-height: 580px;
+	overflow: hidden;
+	padding: 3rem 0;
 	position: relative;
-	padding: 5rem 0;
-	.container {
-		display: flex;
-		height: 100%;		
-	}	
-	&>.section-content {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	.section-bg {
 		height: 100%;
-		width: 100%;
-		.container {
-			flex-direction: column;
-			align-items: center;
-			flex-flow: row wrap;
-			justify-content: center;
-		}		
-		&.section-content__middle .container {
-			align-items: left;
-			flex-flow: column;
-			justify-content: center;
-		}
-		.section-description {
-			width: 100%;
-		}
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: -1;
+	}
+	.section-content {
+		text-align: center;
 		.section-title {
 			margin-bottom: 2rem;
+			text-shadow: 0 1px $offwhite;
 		}
-	}
-	&>.section-bg {
-		height: 100%;
-		left: 50%;
-		position: absolute;
-		transform: translate(-50%,-50%);
-		top: 50%;
-		width: 100%;
-		-webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1.0), rgba(0,0,0,0.1));		
+		p {
+			margin-bottom: 1.25rem;
+		}
+		& .btn {
+			display: block;
+		}
 	}
 	&#intro {
 		margin-top: -80px;
-		height: 670px;
 	}
-	&.section-small {
-		height: auto;
-	}
-}
-
-.login-container {
-	align-items: center;
-	display: flex;
-	margin: 0 auto;
-	min-height: 100vh;
-	width: 400px;
-	.login-box {
-		border: 1px solid $dark-blue;
-		padding: 1.4rem;
-		flex-grow: 1;
+	&#cta {
+		background-color: $darkblue;
+		color: white;
+		min-height: auto;
+		.section-title {
+			text-shadow: 0 1px lighten($darkblue,10%);
+		}
 	}
 }

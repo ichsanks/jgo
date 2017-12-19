@@ -1,85 +1,66 @@
 .navbar {
-	height: 80px;
-	.container {
-		align-items: center;
-		display: flex;
+	width: 100%;
+	&>.container {
+		display: flex;		
 		height: 100%;
+		justify-content: space-between;		
+		align-items: center;
 	}
-	&-brand {
-		margin-right: 12.5rem;
+	&-toggler {
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+		height: 1.25rem;		
+		cursor: pointer;
+		span {
+			background-color: $darkblue;
+			height: 1px;
+			width: 1.5rem;
+		}
+	}
+	&-brand {	
+	}
+	.navbar-nav {
+		&>li {
+			border-bottom: 1px solid $grey;
+			&.dropdown>a {
+				border-bottom: 1px solid $grey;
+			}
+		}
+		li {
+			&>a {				
+				padding: .5rem 1rem;
+				display: block;
+			}
+			.dropdown-menu a {
+				color: darken($grey, 20%);
+				text-indent: 1rem;				
+			}			
+		}		
+		.title {
+			font-size: small;
+			padding: .2rem 1rem;
+			color: lighten($base,40%);
+		}
 	}
 	&-top {		
-		position: absolute;
+		position: fixed;
 		top: 0;
+		height: 80px;		
+		z-index: 2;
+	}
+	#navbar-offcanvas {
+		background: white;		
+		border-right: 1px solid darken(white, 10%);
+		position: fixed;
 		width: 100%;
-		z-index: 10;
-		.scrolled & {
-			background-color: white;
-			box-shadow: 0 -5px 30px lightgrey;
-			position: fixed;
-			border-bottom: 1px solid $light-grey;
-		}
-	}
-	&-right {
-		margin-left: auto;		
-	}
-	&-nav {
-		display: flex;
-		&>li>a {
-			padding: 1.25rem;
-		}
+		top: 80px;
+		bottom: 0;
+		transition: all 5s linear;
+		left: -100%;
 	}
 }
 
 .nav-footer {
-	background-color: $light-grey;	
-	line-height: 1.8;
-	padding: 2.5rem 0;
-	font-weight: 100;
-	ul {
-		&+ul {
-			margin-top: 1.25rem;			
-		}
-		.title {
-			margin-bottom: .75rem;
-			font-weight: 400;
-		}
-	}
-}
-
-#navbar-offcanvas {
-	display: flex;
-	flex: 1 1 auto;
-}
-
-.dropdown {
-	position: relative;
-	.dropdown-menu {
-		background-color: white;
-		border: 1px solid darken($light-grey, 5%);
-		border-radius: 3px;
-		box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
-		display: none;
-		min-width: 200px;	
-		padding: .5rem 0;	
-		position: absolute;
-		.separator {
-			border-top: 1px solid $light-grey;
-			border-bottom: 1px solid darken($light-grey, 5%);
-			margin: .5rem 0;
-		}
-		.title {
-			font-size: smaller;
-			font-weight: 400;
-			padding: .5rem .9375rem;
-			color: darken($light-grey, 30%);
-		}
-		a {
-			display: block;
-			padding: .5rem .9375rem;
-			&:hover {
-				background-color: $light-grey;
-			}
-		}
-	}
+	padding: 3rem 0;
 }
