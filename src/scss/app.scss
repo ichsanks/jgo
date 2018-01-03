@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
 @import "~normalize.css";
+@import "~include-media/dist/_include-media.scss";
 @import "variables.scss";
 @import "base.scss";
 @import "grid.scss";
@@ -8,6 +9,8 @@
 @import "forms.scss";
 @import "buttons.scss";
 
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
 
 .content {
 	margin-top: 80px;
@@ -29,6 +32,10 @@ section {
 		top: 50%;
 		transform: translate(-50%,-50%);
 		z-index: -1;
+		@include media('>=desktop') {
+			height: auto;
+			width: 100%;
+		}
 	}
 	.section-content {
 		text-align: center;
@@ -41,6 +48,14 @@ section {
 		}
 		& .btn {
 			display: block;
+			@include media('>=tablet') {
+				display: inline-block;
+			}
+			&+.btn {
+				@include media('>=tablet') {
+					margin-left: .5rem;
+				}
+			}
 		}
 	}
 	&#intro {
@@ -53,5 +68,12 @@ section {
 		.section-title {
 			text-shadow: 0 1px lighten($darkblue,10%);
 		}
+	}
+}
+
+.login-box {
+	margin: 15rem auto 0;
+	@include media('>=tablet') {
+		width: 25rem;
 	}
 }

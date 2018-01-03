@@ -1,6 +1,6 @@
 include includes/header.pug
-body
-	.login-container
+body.login
+	.container
 		.cards.login-box
 			.card-header
 				a(href="/")
@@ -12,4 +12,8 @@ body
 					.form-group
 						input.form-control(type="password",name="passwd",placeholder="Password")
 					.form-group
-						input.btn.btn-block.btn-lg.btn-orange(type="submit",name="login",value="Log In")
+						input.btn.btn-block.btn-lg.btn-primary(type="submit",name="login",value="Login")
+					hr
+					.form-group.text-center
+						p Belum terdaftar? Daftar 
+							a(href="register.html") sekarang

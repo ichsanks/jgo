@@ -1,37 +1,38 @@
 header.navbar.navbar-top
 	.container
-		a.navbar-brand(href="#") Logo
-		.navbar-toggler(data-toggler="collapse",data-target="#navbar-offcanvas")
+		a.navbar-brand(href="") Logo
+		.navbar-toggler(data-toggle="collapse",data-target="#navbar-offcanvas")
+			span
 			span
 			span
 			span
 		#navbar-offcanvas
-			ul.navbar-nav
-				li.dropdown
-					a(href="#") Cari Pekerja
-						span.fa.fa-caret
-					ul.dropdown-menu
+			ul.navbar-nav.accordion
+				li.accordion-items
+					a(href="#",data-toggle="accordion") Cari Pekerja
+						span.fa.fa-angle-down
+					ul.accordion-body
 						li.title Beri Pekerjaan
 						li
-							a(href="#") Buat Pekerjaan
+							a(href="./new-job.html") Buat Pekerjaan
 						li
-							a(href="#") Cari Layanan
+							a(href="./services.html") Cari Layanan
 						li.separator
 						li.title Temukan
 						li
-							a(href="#") Showcase
+							a(href="./showcases.html") Showcase
 						li
-							a(href="#") Jelajah Pekerja
-				li.dropdown
-					a(href="#") Cari Kerja
-						span.fa.fa-caret
-					ul.dropdown-menu
+							a(href="./workers.html") Jelajah Pekerja
+				li.accordion-items
+					a(href="#",data-toggle="accordion") Cari Kerja
+						span.fa.fa-angle-down
+					ul.accordion-body
 						li
-							a(href="#") Cari Pekerjaan
+							a(href="./jobs.html") Cari Pekerjaan
 						li
-							a(href="#") Buat layanan
+							a(href="./new-service.html") Buat layanan
 				li
-					a(href="#") Cara Kerja
+					a(href="how-it-works.html") Cara Kerja
 			ul.navbar-nav.navbar-right
 				li
 					a(href="./login.html") Login

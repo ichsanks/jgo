@@ -1,9 +1,34 @@
 .container {
 	padding: 0 1rem;
+	margin: 0 auto;
+	@include media('>=desktop') {
+		width: 1170px;
+	}
 }
 
 .col-group {
 	display: flex;
 	flex-grow: 1;
 	flex-flow: column;
+	@include media('>=tablet') {
+		flex-flow: row;
+	}
+	.col {
+		@include media('>=tablet') {
+			flex-grow: 1;
+		}
+	}
+}
+
+.col-md-left {
+	text-align: center;
+	@include media('>=tablet') {
+		text-align: left;
+	}
+	& .hr-list {
+		justify-content: center;
+		@include media('>=tablet') {
+			justify-content: left;
+		}
+	}
 }
